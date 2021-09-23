@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\FileUploadController;
 use App\Mail\devMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,23 @@ Route::get('auth/google/callback', [SocialController::class, 'googleCallback']);
 
 Route::get('/upload', [FileUploadController::class, 'showUploadForm']);
 Route::post('/upload', [FileUploadController::class, 'storeUploads']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+    Route::post('/store', [ArticleController::class, 'store'])->name('article.store');
+    Route::get('/edit/{slug}', [ArticleController::class, 'edit'])->name('article.edit');
+    Route::post('/edit/{slug}', [ArticleController::class, 'update'])->name('article.update');
+    Route::post('/delete/{slug}', [ArticleController::class, 'destroy'])->name('article.destroy');
+    Route::get('/portfolio/edit', [UserController::class, 'edit'])->name('portfolio.edit');
+    Route::post('/portfolio/edit', [UserController::class, 'update'])->name('portfolio.update');
+});
+
+Route::get('/all', [ArticleController::class, 'all'])->name('welcome');
+Route::get('/article/{slug}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/mine', [ArticleController::class, 'mine'])->name('article.mine');
+Route::get('/profile', [UserController::class, 'index'])->name('profile.view');
+
+
 
 /*
 Route::get('auth/linkedin', [SocialController::class, 'linkedinRedirect']);

@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="header">
-        @include('components.header')
+        @include('blade.components.header')
     </div>
     @yield('body')
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
