@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticlesFiledsTable extends Migration
+class CreateArticlesFieldsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateArticlesFiledsTable extends Migration
      */
     public function up()
     {
-        Schema::table('articles_fields', function (Blueprint $table) {
+        Schema::create('articles_fields', function (Blueprint $table) {
             $table->id();
             $table->foreignId('article_id')->constrained('articles');
             $table->foreignId('field_id')->constrained('fields');
@@ -28,8 +28,6 @@ class CreateArticlesFiledsTable extends Migration
      */
     public function down()
     {
-        Schema::table('articles_fields', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('articles_fields');
     }
 }

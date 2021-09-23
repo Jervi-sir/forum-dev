@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Models\User;
-use Validator;
-use Socialite;
-use Exception;
 use Auth;
+
+use Exception;
+use Socialite;
+use Validator;
+use App\Models\Role;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 
 class SocialController extends Controller
@@ -23,26 +24,30 @@ class SocialController extends Controller
     public function googleCallback()
     {
         try {
-
             $user = Socialite::driver('google')->user();
             $isUser = User::where('google_id', $user->id)->first();
 
             if($isUser){
                 Auth::login($isUser);
-                return redirect('/dashboard');
-            }else{
+                return redirect('/');
+            }
+            else
+            {
                 $user_in_db = User::where('email', $user->email);
                 $user_db = $user_in_db->first();
 
                 //if user email doesnt exist
                 if($user_in_db->count() == 0)
                 {
+                    $role_id = Role::where('name', 'creator')->first()->id;
+
                     $createUser = User::create([
-                        'name' => $user->name,
+                        'name'  => $user->name,
                         'email' => $user->email,
                         'google_id' => $user->id,
+                        'role_id'   => $role_id,
                         'auth_type' => 'google',
-                        'password' => encrypt('admin@123')
+                        'password'  => encrypt('admin@123')
                     ]);
                     Auth::login($createUser);
                 }
@@ -62,7 +67,7 @@ class SocialController extends Controller
                     Auth::login($user_db);
                 }
 
-                return redirect('/dashboard');
+                return redirect('/');
             }
 
         } catch (Exception $exception) {
@@ -83,25 +88,30 @@ class SocialController extends Controller
         try {
 
             $user = Socialite::driver('github')->user();
+
             $searchUser = User::where('github_id', $user->id)->first();
 
             if($searchUser){
                 Auth::login($searchUser);
-                return redirect('/dashboard');
+                return redirect('/');
 
-            }else{
+            }
+            else
+            {
                 $user_in_db = User::where('email', $user->email);
                 $user_db = $user_in_db->first();
 
                 //if user email doesnt exist
                 if($user_in_db->count() == 0)
                 {
+                    $role_id = Role::where('name', 'creator')->first()->id;
                     $gitUser = User::create([
-                        'name' => $user->name,
+                        'name'  => $user->name,
                         'email' => $user->email,
-                        'github_id'=> $user->id,
-                        'auth_type'=> 'github',
-                        'password' => encrypt('gitpwd059')
+                        'github_id' => $user->id,
+                        'role_id'   => $role_id,
+                        'auth_type' => 'github',
+                        'password'  => encrypt('gitpwd059')
                     ]);
                     Auth::login($gitUser);
                 }
@@ -120,7 +130,7 @@ class SocialController extends Controller
                     $user_db->save();
                     Auth::login($user_db);
                 }
-                return redirect('/dashboard');
+                return redirect('/');
             }
 
 
@@ -150,20 +160,23 @@ class SocialController extends Controller
 
                 Auth::login($linkedinUser);
 
-                return redirect('/dashboard');
+                return redirect('/');
 
-            }else{
+            }else
+            {
+                $role_id = Role::where('name', 'creator')->first()->id;
                 $user = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'linkedin_id' => $user->id,
                     'auth_type' => 'linkedin',
+                    'role_id' => $role_id,
                     'password' => encrypt('admin12345')
                 ]);
 
                 Auth::login($user);
 
-                return redirect('/dashboard');
+                return redirect('/');
             }
 
         } catch (Exception $e) {
@@ -187,7 +200,7 @@ class SocialController extends Controller
 
             if($searchUser){
                 Auth::login($searchUser);
-                return redirect('/dashboard');
+                return redirect('/');
 
             }else{
                 $user_in_db = User::where('email', $user->email);
@@ -220,7 +233,7 @@ class SocialController extends Controller
                     $user_db->save();
                     Auth::login($user_db);
                 }
-                return redirect('/dashboard');
+                return redirect('/');
             }
 
 
@@ -245,7 +258,7 @@ class SocialController extends Controller
 
             if($searchUser){
                 Auth::login($searchUser);
-                return redirect('/dashboard');
+                return redirect('/');
 
             }else{
                 $user_in_db = User::where('email', $user->email);
@@ -278,7 +291,7 @@ class SocialController extends Controller
                     $user_db->save();
                     Auth::login($user_db);
                 }
-                return redirect('/dashboard');
+                return redirect('/');
             }
 
 
@@ -286,7 +299,4 @@ class SocialController extends Controller
             dd($e->getMessage());
         }
     }
-
-
-
 }

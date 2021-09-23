@@ -13,7 +13,7 @@ class UserController extends Controller
         $user = Auth()->user();
         $porfolio = $user->portfolio;
 
-        return view('user.profile', [
+        return view('blade.profile.myprofile', [
             'user' => $user,
             'porfolio' => $porfolio,
         ]);

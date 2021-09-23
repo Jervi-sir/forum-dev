@@ -12,12 +12,7 @@
 <title>DEv - 1954</title>
 @endsection
 
-
 @section('body')
-<form action="{{ route('logout') }}" method="POST">
-    @csrf
-    <button type="submit">Logout</button>
-</form>
 <main>
     <div class="left">
         <div class="links">

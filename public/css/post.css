@@ -60,10 +60,15 @@ main .vertical-line {
 
 /*--- input image ---*/
 main .edit-container .image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    padding-left: 10%;
-    height: 200px;
+}
+
+main .edit-container .image img {
+    width: 100%;
 }
 main .edit-container .image label {
     padding: 0.5rem 1rem;
@@ -71,6 +76,9 @@ main .edit-container .image label {
     box-sizing: border-box;
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.63));
     border-radius: 4px;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
 }
 
 main .edit-container .image label:hover {

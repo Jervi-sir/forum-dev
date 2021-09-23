@@ -20,7 +20,7 @@ class ArticleController extends Controller
     public function all()
     {
         $articles = Article::all();
-        return view('welcome',[
+        return view('blade.articles.all',[
             'articles' => $articles,
         ]);
     }
@@ -32,7 +32,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('blade.articles.create');
     }
 
     /**
@@ -44,12 +44,15 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $slug = Str::slug($request->input('title'), "-");
+        $response = cloudinary()->upload($request->input('image'))->getSecurePath();
+
+        $image = $response ? $response : 'https://fakeimg.pl/690x420/';
 
         $article = new Article();
         $article->slug = $slug;
         $article->user_id = Auth()->user()->id;
         $article->title = $request->title;
-        $article->thumbnail = 'https://fakeimg.pl/690x420/';
+        $article->thumbnail = $image;
         $article->bodyMkd = $request->body;
         $article->status = 1;
         $article->save();
@@ -70,7 +73,7 @@ class ArticleController extends Controller
         $Parsedown = new Parsedown();
         $text = $Parsedown->text($article->bodyMkd);
 
-        return view('article.show', [
+        return view('blade.articles.show', [
             'article' => $article,
             'text' => $text
         ]);
@@ -82,7 +85,7 @@ class ArticleController extends Controller
         $user = Auth()->user();
         $articles = $user->articles;
 
-        return view('article.mine', [
+        return view('blade.articles.mine', [
             'articles' => $articles,
         ]);
     }
@@ -91,7 +94,7 @@ class ArticleController extends Controller
     {
         $article = Article::where('slug', $slug)->first();
 
-        return view('article.edit', [
+        return view('blade.articles.edit', [
             'article' => $article,
         ]);
     }

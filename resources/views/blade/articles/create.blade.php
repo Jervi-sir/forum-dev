@@ -5,6 +5,7 @@
 @endsection
 
 @section('top-script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jic/2.0.2/JIC.min.js"></script>
 
 @endsection
 
@@ -13,7 +14,7 @@
 @endsection
 
 @section('body')
-<main >
+<main>
     <form action="{{ route('article.store') }}" method="POST" class="edit-container" enctype="multipart/form-data">
         @csrf
         <div class="tabs-container">
@@ -23,10 +24,13 @@
                 <button type="button" class="preview">Preview</button>
             </div>
         </div>
-        <div class="image">
-            <label for="cover">Add a cover image</label>
-            <input name="image" type="file" id="cover" name="img" accept="image/*">
+        <div class="image" >
+            <img id="source_img" src="" alt="Image preview..." style="opacity: 0">
+            <label for="input_image">Add a cover image</label>
+            <input type="file" id="input_image" accept="image/*" onchange="previewFile()">
+            <input name="image" type="text" id="resultImage"  hidden>
         </div>
+
         <div class="title-tags">
             <input name="title" type="text" class="title" placeholder="Title" required>
             <input name="tags[]"  type="text" class="tags" placeholder="add tags.." required>
@@ -50,5 +54,31 @@
         var submit = document.getElementById("publish");
         submit.click();
     }
+</script>
+<script>
+    function previewFile() {
+        var preview = document.getElementById('source_img');
+        preview.style.opacity = 1;
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+            myFunction();
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function myFunction(){
+        var source_img = document.getElementById("source_img");
+        var quality =  60,
+        output_format = 'jpg';
+        document.getElementById("resultImage").value = jic.compress(source_img,quality,output_format).src;
+    };
+
+
 </script>
 @endsection
