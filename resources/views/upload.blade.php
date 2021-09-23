@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jic/2.0.2/JIC.min.js"></script>
     <!-- Styles -->
     <style>
         html, body {
@@ -82,9 +82,19 @@
                     @csrf
                     <div class="row">
 
-                        <div class="col-md-6">
-                            <input type="file" name="file" class="form-control">
-                        </div>
+                        <input name="source" type="file" id="input_image" onchange="previewFile()">
+                        <br>
+                        <img id="source_img" src="" height="200" alt="Image preview...">
+                        <br>
+
+                        <button type="button" onclick="myFunction()" >compress</button>
+                        <br>
+
+                        <img id="target_img" src="" height="200" alt="Image preview...">
+                        <br>
+
+                        <input name="image" type="text" id="resultImage"  hidden>
+                        <br>
 
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-success">Upload a File</button>
@@ -95,5 +105,36 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        function previewFile() {
+              var preview = document.querySelector('img');
+              var file    = document.querySelector('input[type=file]').files[0];
+              var reader  = new FileReader();
+
+              reader.addEventListener("load", function () {
+                preview.src = reader.result;
+
+              }, false);
+
+              if (file) {
+                reader.readAsDataURL(file);
+              }
+        }
+
+        function myFunction(){
+            var source_img = document.getElementById("source_img"),
+                target_img = document.getElementById("target_img");
+            var quality =  60,
+            output_format = 'jpg';
+            target_img.src = jic.compress(source_img,quality,output_format).src;
+
+            document.getElementById("resultImage").value = jic.compress(source_img,quality,output_format).src;
+
+            console.log("I am a myFunction!");
+        };
+
+    </script>
 </body>
 </html>
