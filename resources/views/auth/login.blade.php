@@ -51,11 +51,11 @@
                     Login with GitHub
                 </a>
             </div>
-            {{-- Laravel Login with Linkedin --}}
+            {{-- Laravel Login with Google --}}
             <div class="flex items-center justify-end mt-5">
-                <a class="btn" href="{{ url('auth/linkedin') }}"
-                    style="background: #0E62BC; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
-                    Login with Linkedin
+                <a class="btn" href="{{ url('auth/google') }}"
+                    style="background: #bc0e0e; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with GOOGLE
                 </a>
             </div>
         </form>
