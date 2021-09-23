@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use App\Mail\devMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('auth/github/callback', [SocialController::class, 'gitCallback']);
 Route::get('auth/google', [SocialController::class, 'googleRedirect']);
 Route::get('auth/google/callback', [SocialController::class, 'googleCallback']);
 
+Route::get('/upload', [FileUploadController::class, 'showUploadForm']);
+Route::post('/upload', [FileUploadController::class, 'storeUploads']);
 
 /*
 Route::get('auth/linkedin', [SocialController::class, 'linkedinRedirect']);
