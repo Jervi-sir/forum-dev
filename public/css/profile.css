@@ -1,0 +1,332 @@
+main {
+    margin: auto;
+    width: 1000px;
+
+}
+
+/*--------------------
+        profile
+--------------------*/
+main .profile {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 3rem 5%;
+
+    background: #252A3F;
+    border-radius: 5px;
+}
+
+/*-- top --*/
+main .profile .top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 5%;
+}
+
+main .profile .top .image {
+    width: 20%;
+}
+
+/*-- profile details --*/
+main .profile .top .details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+}
+
+main .profile .top .details .edit-profile {
+    position: absolute;
+    top: 0%;
+    right: 0;
+}
+
+main .profile .top .details .edit-profile button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #171C29;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFC700;
+}
+
+
+main .profile .top .username {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--size-large-medium);
+    color: #FFFFFF;
+}
+
+main .profile .top .bio {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .profile .top .location-joined {
+    display: flex;
+    gap: 5rem;
+}
+
+main .profile .top .location {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*--- line separator ---*/
+main .profile .line-separator {
+    display: block;
+    height: 5px;
+    border-bottom: 1px solid #939393;
+}
+
+/*--- find me ---*/
+main .profile .bottom {
+    display: flex;
+    padding: 1rem 5%;
+    align-items: center;
+}
+
+main .profile .bottom .find-me {
+    width: 20%;
+}
+
+main .profile .bottom .find-me span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-small);
+    letter-spacing: 0.37em;
+    color: #FFFFFF;
+}
+
+main .profile .bottom .socials ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+main .profile .bottom .socials li .website {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-small);
+    letter-spacing: 0.115em;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*------------------
+        Posts
+-------------------*/
+main .posts {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+}
+
+/*--- totals ---*/
+main .posts .totals {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+
+}
+
+main .posts .totals a {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    line-height: 22px;
+    /* identical to box height */
+
+    text-decoration-line: none;
+
+    color: #FFFFFF;
+}
+
+main .posts .totals a span {
+    text-decoration: underline;
+}
+
+/*--- card ---*/
+
+main .posts .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #252A3F;
+    margin: 1rem 0;
+}
+
+/*-- status --*/
+main .posts .card .status {
+    background: #141F3D;
+    text-align: center;
+    writing-mode: vertical-rl;
+    transform: scale(-1, -1);
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    padding: 5px;
+    user-select: none;
+}
+
+main .posts .card .status.published {
+    color: #FFC700;
+}
+
+
+/*--- content ---*/
+main .posts .card .content {
+    width: 80%;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/*--- image ---*/
+main .posts .card .content .image img{
+    width: 50px;
+    height: 50px;
+}
+
+/*--- post details ---*/
+main .posts .card .content .details .owner .name span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .posts .card .content .details .owner .created span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-small);
+    color: #FFFFFF;
+}
+
+main .posts .card .content .details .post h4{
+    margin: 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-large-medium);
+
+    color: #FFFFFF;
+}
+
+main .posts .card .content .details .post .tags span{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+/*--- stats ---*/
+main .posts .card .stats ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    padding-right: 1rem;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+}
+
+main .posts .card .stats li {
+    display: flex;
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 425px){
+
+    main {
+        width: 95%;
+    }
+    main .profile {
+        position: relative;
+    }
+
+    main .profile .top .details {
+        position: unset;
+    }
+
+    main .profile .top {
+        display: block;
+        text-align: center;
+    }
+    main .profile .top .image {
+        width: 100%;
+    }
+    main .profile .top .details {
+        width: 100%;
+    }
+
+    main .profile .top .location-joined span {
+        font-size: var(--size-small);
+    }
+
+    main .profile .top .location {
+        gap: 0.4rem;
+    }
+
+    main .profile .top .location img {
+        width: 10px;
+    }
+
+    main .profile .bottom {
+        display: block;
+        text-align: center;
+    }
+
+    main .profile .bottom .find-me {
+        width: 100%;
+    }
+
+    main .profile .bottom .socials ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main .not-small {
+        display: none;
+    }
+
+    main .posts .totals {
+        padding: 1rem 5%;
+    }
+
+    main .posts .card {
+        gap: 1rem;
+    }
+
+    main .posts .card .content .image {
+        display: none;
+    }
+
+    main .posts .card .content .details .post .tags span {
+        font-size: var(--size-extra-small);
+    }
+
+
+}

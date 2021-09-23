@@ -1,0 +1,190 @@
+main {
+    width: 800px;
+    margin: 2rem auto;
+}
+
+main form {
+    position: relative;
+    background: #252A3F;
+    border-radius: 5px;
+}
+
+/*--- tabs ---*/
+main .tabs-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+main .tabs {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    height: 38px;
+    left: 906px;
+    top: 136px;
+
+    background: #171C29;
+    border-radius: 2px;
+}
+
+main .tabs button {
+    background: transparent;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #464D67;
+}
+
+main .tabs button:hover {
+    cursor: pointer;
+    color: tomato;
+    transition: 0.5s;
+}
+
+main .tabs button.active {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    text-decoration-line: underline;
+    color: #FFC700;
+}
+
+main .vertical-line {
+    display: block;
+    border-right: 1px solid #464D67;
+}
+
+/*--- input image ---*/
+main .edit-container .image {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    height: 200px;
+}
+main .edit-container .image label {
+    padding: 0.5rem 1rem;
+    border: 1px solid #D6D6D7;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.63));
+    border-radius: 4px;
+}
+
+main .edit-container .image label:hover {
+    cursor: pointer;
+    color: #B8B8B8;
+    background: #464D67;
+    transition: 0.5s;
+}
+
+main .edit-container .image input {
+    display: none;
+}
+
+/*--- Title and tags ---*/
+main .edit-container .title-tags {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 10%;
+    background: #464D67;
+}
+
+main .edit-container .title-tags input {
+    background-color: transparent;
+    border: none;
+}
+
+main .edit-container .title-tags .title,
+main .edit-container .title-tags .title::placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-extra-large);
+    letter-spacing: 0.265em;
+    color: #B8B8B8;
+    outline-style: none;
+}
+
+main .edit-container .title-tags .tags,
+main .edit-container .title-tags .tags::placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #8B858E;
+    outline-style: none;
+}
+
+/*--- post ---*/
+main .edit-container .content {
+    width: 100%;
+}
+main .edit-container .content textarea{
+    width: 100%;
+    resize: vertical;
+    padding: 1rem 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+main .edit-container .content textarea::placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+}
+
+/*--- Actions ---*/
+main .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 1rem;
+
+}
+
+main .actions button {
+    padding: 0.5rem 2rem;
+    background: #252A3F;
+    border-radius: 5px;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .actions button.pubilc {
+    color: #FFC700;
+}
+
+main .actions button:hover {
+    cursor: pointer;
+    background: #464D67;
+    transition: 0.5s;
+}
+
+
+@media only screen and (max-width: 425px){
+
+    main {
+        width: 90%;
+    }
+
+    main .actions {
+        justify-content: space-between;
+    }
+
+}

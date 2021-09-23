@@ -1,0 +1,15 @@
+.body-content {
+    padding: 1rem;
+}
+
+.body-content pre {
+    position: relative;
+    background: black;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.body-content img {
+    max-width: 100%;
+}

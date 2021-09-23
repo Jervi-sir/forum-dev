@@ -1,0 +1,356 @@
+main {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/*----------------
+        Post
+-----------------*/
+main .post {
+    width: 70%;
+    background: #252A3F;
+    border-radius: 5px;
+}
+
+/*--- images ---*/
+
+main .post .image {
+    width: 100%;
+    height: 235px;
+    background: #565656;
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+main .post .image img {
+    width: 100%;
+}
+
+
+/*--- post ---*/
+main .post .container {
+    display: flex;
+    gap: 1rem;
+    padding:0 1rem ;
+}
+
+/*-- stats --*/
+main .post .container .stats ul {
+    padding: 0;
+    margin-top: 10rem;
+    list-style: none;
+}
+
+main .post .container .stats ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*-- content --*/
+
+main .post .container h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-extra-large);
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+
+/*-- details --*/
+main .post .container .details {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+main .post .container .details img {
+    width: 60px;
+    height: 60px;
+}
+
+main .post .container .details span{
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .post .container .details button{
+    background: #171C29;
+    border-radius: 5px;
+    border: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-small);
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+
+}
+
+main .post .container .details button.edit {
+    color: #FFC700;
+}
+
+main .post .container .details button:hover {
+    cursor: pointer;
+}
+
+main .post .content {
+    width: 85%;
+}
+
+
+/*--- Body content ---*/
+
+main .post .body-content {
+    width: 100%;
+    margin: 2rem 0px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+
+/*---- discussion -----*/
+main .post .comments h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+main .post .comments .card{
+    display: flex;
+    gap: 2rem;
+
+}
+main .post .comments .card .comment {
+    width: 95%;
+}
+
+main .post .comments .card .user-image {
+    width: 5%;
+}
+
+main .post .comments .card img {
+    width: 40px;
+    height: 40px;
+}
+
+main .post .comments .card textarea {
+    width: 100%;
+    height: 63px;
+    padding: 1rem;
+
+    background: rgba(249, 249, 249, 0.02);
+    border: 2px solid rgba(219, 219, 219, 0.25);
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: vertical;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    line-height: 22px;
+    color: #717C88;
+    outline-color: #495b6e;
+}
+
+main .post .comments .card textarea::placeholder {
+    color: #717C88;
+}
+
+/*----------------
+        right
+-----------------*/
+main .right {
+    width: 30%;
+}
+
+/*--- author ---*/
+main .right .author {
+    background: #252A3F;
+    border-radius: 6px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+main .right .author .detail,
+main .right .author .bio,
+main .right .author .location,
+main .right .author .works,
+main .right .author .joined {
+    padding: 1rem 2rem;
+
+}
+/*--- detail ---*/
+main .right .author .detail {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+main .right .author .detail img {
+    width: 55px;
+    height: 55px;
+}
+
+main .right .author .detail .name{
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+}
+
+/*-- bio --*/
+main .right .author .bio{
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .right .author .location span,
+main .right .author .works span,
+main .right .author .joined span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+
+main .right .author .location p,
+main .right .author .works p,
+main .right .author .joined p{
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .right .author .follow button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #171C29;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--size-medium);
+    color: #FFC700;
+}
+
+main .right .author .follow button:hover {
+    cursor: pointer;
+    background: #30384d;
+    transition: 0.5s;
+}
+
+/*---- trending ----*/
+main .right .trending {
+    background: #252A3F;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 2rem 0;
+}
+main .right .trending h4{
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+}
+
+main .right .trending span{
+    color: #FFC700;
+}
+
+main .right .trending .item {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.31);
+    padding: 1rem 2rem;
+}
+
+main .right .trending .image img {
+    width: 30px;
+    height: 30px;
+}
+
+main .right .trending .details .title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+}
+
+main .right .trending .details .tags {
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-extra-small);
+    color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 425px){
+    main {
+        width: 95%;
+    }
+    main .post {
+        width: 100%;
+    }
+    main .right {
+        display: none;
+    }
+
+    main .post .container {
+        flex-direction: column;
+    }
+
+    main .post .container .stats ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+
+    main .post .container .stats .not-small {
+        display: none;
+    }
+
+    main .post .container .stats .small {
+        display: inline-block;
+    }
+
+    main .post .container .stats ul li {
+        gap: 0.5rem;
+    }
+
+    main .post .content {
+        width: 100%;
+    }
+
+    main .post .container .details {
+        flex-wrap: wrap;
+    }
+
+    main .post .container .details .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main .post .body-content {
+        margin-top: 1rem;
+    }
+
+}

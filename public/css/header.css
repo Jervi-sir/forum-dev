@@ -1,0 +1,317 @@
+#header {
+    background: #252A3F;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+header {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+header .hamburger {
+    display: none;
+}
+
+header .logo {
+    width: 15%;
+}
+
+header .search {
+    width: 65%;
+}
+
+header .action {
+    width: 20%;
+}
+
+/*--- Logo ---*/
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .logo span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    letter-spacing: 0.265em;
+
+    color: #FFFFFF;
+}
+
+/*--- Search ---*/
+header .search .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 40px;
+
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding:0 1rem;
+}
+
+header .search .container input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+}
+
+header .search .container input::-webkit-input-placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #FFFFFF;
+}
+
+header .search .container input::-moz-placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #FFFFFF;
+}
+
+header .search .container input:-ms-input-placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #FFFFFF;
+}
+
+header .search .container input::-ms-input-placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #FFFFFF;
+}
+
+header .search .container input::placeholder,
+header .search .container input {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+
+    color: #FFFFFF;
+}
+
+header .action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+header .action .button{
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+}
+
+header .action .button.dark-blue {
+    background: #171C29;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFC700;
+    text-decoration: none;
+}
+
+header .action .login-link {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFC700;
+    text-decoration: none;
+}
+
+/*--------------------
+    Hanburger Menu
+---------------------*/
+.wrapper-menu {
+    width: 30px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 330ms ease-out;
+}
+
+.wrapper-menu.open {
+    transform: rotate(-45deg);
+}
+
+.line-menu {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+}
+
+.line-menu.half {
+    width: 50%;
+}
+
+.line-menu.start {
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: right;
+}
+
+.open .line-menu.start {
+    transform: rotate(-90deg) translateX(6px);
+}
+
+.line-menu.end {
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
+}
+
+.open .line-menu.end {
+    transform: rotate(-90deg) translateX(-8px);
+}
+
+
+.menu-mobile {
+    display: none;
+    position: relative;
+    z-index: 1;
+    padding: 10% 10%;
+    width: 95%;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #252A3F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu-mobile .search-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 1rem;
+}
+
+.menu-mobile .search-mobile input {
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+
+}
+.menu-mobile .search-mobile input:placeholder {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.menu-mobile .search-mobile img {
+    width: 17px;
+    height: 17px;
+}
+
+.menu-mobile a {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.menu-mobile .row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 425px){
+    #header {
+        background: transparent;
+        box-shadow: none;
+    }
+    header {
+        background: #252A3F;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        width: 100%;
+        transition: 0.5s;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .wrapper-menu {
+        display: flex;
+    }
+    main {
+        transition: all 0.4s ease-in-out;
+        margin-top: 2rem;
+    }
+
+    .transition-up {
+        transform: translateY(-100vh);
+        position: absolute;
+        transition: 0.5s;
+    }
+    .up {
+        /*transform: translateY(-19rem);*/
+    }
+
+    header {
+        position: relative;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    header .action,
+    header .search,
+    header .logo span{
+        display: none;
+    }
+
+    header .hamburger {
+        display: block;
+    }
+
+    header .hamburger button {
+        background: transparent;
+        border: none;
+    }
+
+}

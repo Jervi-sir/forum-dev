@@ -1,0 +1,236 @@
+
+/*---------------
+        main
+----------------*/
+
+main {
+    background: #252A3F;
+    border-radius: 5px;
+    margin: 2rem auto;
+    width: 700px;
+    padding: 2rem 2.5rem;
+}
+
+/*--- Titles ---*/
+main h1 {
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-large);
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+}
+
+main h3 {
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+/*--- Social Buttons ---*/
+main .button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .button-wide.black {
+    background: #000000;
+}
+
+main .button-wide.blue {
+    background: #1DA1F2;
+}
+
+main .button-wide.grey {
+    background: #24292E;
+}
+
+main .button-wide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+/*--- Separator ---*/
+main .separator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .separator span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--size-regular);
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+}
+
+/*--- Inputs ---*/
+
+
+main form .row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+main form label {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+main form .row input {
+    height: 45px;
+    background: #F9F9F9;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    padding-left: 1rem;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-regular);
+    color: #171C29;
+}
+
+main form .row-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+main form .row-half .half {
+    display: flex;
+    align-items: center;
+}
+
+
+main form .row-half input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    left: 447px;
+    top: 702px;
+
+    background: #171C29;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+main form .row-half span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--size-small);
+    color: #FFFFFF;
+}
+
+main form .row-half .forgot {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-small);
+    letter-spacing: 0.05em;
+    color: #FFC700;
+    text-decoration: none;
+}
+
+
+/*---- form button ----*/
+main form .button-wide.dark-blue {
+    margin-top: 2rem;
+    background: #171C29;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--size-regular);
+    letter-spacing: 0.05em;
+    color: #FFC700;
+}
+
+main form .button-wide.dark-blue:hover {
+    cursor: pointer;
+}
+
+/*--- dont have account ---*/
+main .dont {
+    text-align: center;
+
+}
+
+main .dont a {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-small);
+    letter-spacing: 0.05em;
+    color: #FFC700;
+}
+
+
+@media only screen and (max-width: 425px){
+
+    main {
+        width: 95%;
+        padding: 2rem 1rem;
+    }
+    main h1 {
+        font-size: var(--size-medium);
+    }
+
+    main h3 {
+        font-size: 11px;
+    }
+
+    main .button-wide span{
+        font-size: var(--size-small);
+    }
+
+    main .button-wide img{
+        width: 20px;
+        height: 20px;
+    }
+
+
+    main .separator span.line {
+        display: none;
+    }
+
+    main .separator  {
+        justify-content: center;
+    }
+
+    main .separator span {
+        font-size: var(--size-small);
+        letter-spacing: .5em;
+    }
+
+}
