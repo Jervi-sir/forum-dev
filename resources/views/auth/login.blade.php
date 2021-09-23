@@ -43,6 +43,21 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
+
+             {{-- Login with GitHub --}}
+             <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ url('auth/github') }}"
+                    style="background: #313131; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with GitHub
+                </a>
+            </div>
+            {{-- Laravel Login with Linkedin --}}
+            <div class="flex items-center justify-end mt-5">
+                <a class="btn" href="{{ url('auth/linkedin') }}"
+                    style="background: #0E62BC; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with Linkedin
+                </a>
+            </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
