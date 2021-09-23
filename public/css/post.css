@@ -3,7 +3,7 @@ main {
     margin: 2rem auto;
 }
 
-main form {
+main .container {
     position: relative;
     background: #252A3F;
     border-radius: 5px;
@@ -14,6 +14,7 @@ main .tabs-container {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 3;
 }
 main .tabs {
     display: flex;
@@ -59,7 +60,8 @@ main .vertical-line {
 }
 
 /*--- input image ---*/
-main .edit-container .image {
+main .edit-container .image,
+main .preview-container .image {
     height: 200px;
     position: relative;
     overflow: hidden;
@@ -67,7 +69,8 @@ main .edit-container .image {
     align-items: center;
 }
 
-main .edit-container .image img {
+main .edit-container .image img,
+main .preview-container .image img {
     width: 100%;
 }
 main .edit-container .image label {
@@ -182,6 +185,78 @@ main .actions button:hover {
     cursor: pointer;
     background: #464D67;
     transition: 0.5s;
+}
+
+
+/*----- Prewview --------*/
+main .preview-container .title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-extra-large);
+    letter-spacing: 0.265em;
+    color: #B8B8B8;
+    outline-style: none;
+}
+
+main .preview-container .tags {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #8B858E;
+    outline-style: none;
+}
+
+
+main .preview-container,
+main .edit-container {
+    display: none;
+}
+
+main .preview-container.focus,
+main .edit-container.focus {
+    display: block;
+}
+
+main .preview-container .title-tags {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 10%;
+    background: #464D67;
+}
+
+main .preview-container .title-tags .title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--size-extra-large);
+    letter-spacing: 0.265em;
+    color: #B8B8B8;
+    outline-style: none;
+}
+
+main .preview-container .title-tags .tags {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #8B858E;
+    outline-style: none;
+}
+
+
+main .preview-container .content {
+    width: 100%;
+    padding: 1rem 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--size-medium);
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
 }
 
 
