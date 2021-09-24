@@ -21,25 +21,25 @@
     </div>
     <div class="tab">
         <!-- User -->
-        <form id="user-tab" class="card" action="" method="POST">
+        <form id="user-tab" class="card" action="{{ route('profile.user') }}" method="POST">
             @csrf
             <div class="container">
                 <h4>User</h4>
                 <div class="row">
                     <label for="name">name</label>
-                    <input name="name" type="text" placeholder="name" value="{{ Auth()->user()->name }}" autocomplete="off" onkeyup="submitUserBtn()">
+                    <input name="name" type="text" placeholder="name" value="{{ $user->name }}" autocomplete="off" onkeyup="submitUserBtn()">
                 </div>
                 <div class="row">
                     <label for="email">email</label>
-                    <input type="email" placeholder="email" value="{{ Auth()->user()->email }}" autocomplete="off" disabled>
+                    <input type="email" placeholder="email" value="{{ $user->email }}" autocomplete="off" disabled>
                 </div>
                 <div class="row">
                     <label for="username">what should we name you</label>
-                    <input name="nickname" type="text" placeholder="username" value="{{ Auth()->user()->profile->nickname }}" autocomplete="off" onkeyup="submitUserBtn()">
+                    <input name="nickname" type="text" placeholder="username" value="{{ $user->profile->nickname }}" autocomplete="off" onkeyup="submitUserBtn()">
                 </div>
                 <div class="row-pic">
                     <div class="image-container">
-                        <img id="source_img" src="{{ Auth()->user()->profile_photo_path != null ? Auth()->user()->profile_photo_path : 'images/profile.svg' }}" alt="dev-1954">
+                        <img id="source_img" src="{{ $user->profile_photo_path != null ? $user->profile_photo_path : 'images/profile.svg' }}" alt="dev-1954">
                     </div>
                     <label for="input_image">Choose picture</label>
                     <input type="file" id="input_image" accept="image/*" onchange="previewFile(); submitUserBtn()" hidden>
@@ -52,25 +52,21 @@
         </form>
 
         <!-- Details -->
-        <form id="detail-tab" action="" method="POST">
+        <form id="detail-tab" action="{{ route('profile.detail') }}" method="POST">
             @csrf
             <div class="container">
                 <h4>Details</h4>
                 <div class="row">
                     <label for="url">your website url</label>
-                    <input name="url" type="text" placeholder="url" value="" onkeyup="submitDetailBtn()">
+                    <input name="website" type="text" placeholder="url" value="{{ $profile->website }}" onkeyup="submitDetailBtn()">
                 </div>
                 <div class="row">
                     <label for="location">location</label>
-                    <input name="location" type="text" placeholder="location" value="" onkeyup="submitDetailBtn()">
-                </div>
-                <div class="row">
-                    <label for="username">username</label>
-                    <input name="username" type="email" placeholder="username" value="" onkeyup="submitDetailBtn()">
+                    <input name="location" type="text" placeholder="location" value="{{ $profile->location }}" onkeyup="submitDetailBtn()">
                 </div>
                 <div class="row">
                     <label for="bio">bio</label>
-                    <textarea id="textarea-detail" name="bio" id="bio" rows="5" maxlength="300" onkeyup="submitDetailBtn()"></textarea>
+                    <textarea id="textarea-detail" name="bio" id="bio" rows="5" maxlength="300" onkeyup="submitDetailBtn()">{{ $profile->bio }}</textarea>
                     <div id="the-count-detail">
                         <span id="current-detail">0</span>
                         <span id="maximum-detail">/ 300</span>
@@ -83,7 +79,7 @@
         </form>
 
         <!-- Skills  -->
-        <form id="skill-tab" action="" method="POST">
+        <form id="skill-tab" action="{{ route('profile.skill') }}" method="POST">
             @csrf
             <div class="container">
                 <h4>Skills and what I m currently doing</h4>
@@ -96,10 +92,6 @@
                 <div class="row">
                     <label for="skills">Skills/Languages</label>
                     <input name="skills" type="text" placeholder="skills" value="" onkeyup="submitSkillBtn()">
-                </div>
-                <div class="row">
-                    <label for="username">username</label>
-                    <input name="username" type="email" placeholder="username" value="" onkeyup="submitSkillBtn()">
                 </div>
             </div>
             <div id="skill-submit" class="submit">
