@@ -26,7 +26,9 @@
             </a>
 
             <div class="dropdown">
-                <img src="{{ asset('images/profile.svg')}}" onclick="dropDown()" class="dropbtn"  alt="" >
+                <div class="image-container">
+                    <img src="{{ Auth()->user()->profile_photo_path != null ? Auth()->user()->profile_photo_path : 'images/profile.svg' }}" onclick="dropDown()" class="dropbtn"  alt="" >
+                </div>
                 <div id="myDropdown" class="dropdown-content">
                     <a class="{{ (request()->is('profile')) ? 'active' : '' }}" href="{{ route('profile.view') }}">
                        {{Auth()->user()->name}}
@@ -34,7 +36,7 @@
                     <hr>
                     <a href="#">Create Post</a>
                     <a href="#">Saved Posts</a>
-                    <a href="#">Setting</a>
+                    <a class="{{ (request()->is('profile-edit')) ? 'active' : '' }}" href="{{ route('profile.edit') }}">Setting</a>
                     <hr>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

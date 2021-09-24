@@ -89,17 +89,17 @@ main .tab .container{
     padding: 1rem 3rem;
 }
 
-form {
+main form {
     margin-bottom: 3rem;
 }
 
-form .submit {
+main form .submit {
     background: #252A3F;
     padding: 1rem 3rem;
     margin-top: 1rem;
 }
 
-form .submit button {
+main form .submit button {
     width: 100%;
     padding: 0.7rem;
     background: #171C29;
@@ -112,11 +112,11 @@ form .submit button {
     border: none;
 }
 
-form .submit button:hover {
+main form .submit button:hover {
     cursor: pointer;
 }
 
-form textarea {
+main form textarea {
     resize: vertical;
     width: 100%;
     border: 1px solid #FFFFFF;
@@ -128,7 +128,7 @@ form textarea {
     font-size: 15px;
 }
 
-form textarea:focus {
+main form textarea:focus {
     outline: none;
     border: 1px solid #FFC700;
     transition: 0.5s;

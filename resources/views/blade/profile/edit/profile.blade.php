@@ -34,15 +34,15 @@
                     <input type="email" placeholder="email" value="{{ Auth()->user()->email }}" autocomplete="off" disabled>
                 </div>
                 <div class="row">
-                    <label for="username">username</label>
-                    <input name="username" type="text" placeholder="username" value="{{ Auth()->user()->name }}" autocomplete="off" onkeyup="submitUserBtn()">
+                    <label for="username">what should we name you</label>
+                    <input name="nickname" type="text" placeholder="username" value="{{ Auth()->user()->profile->nickname }}" autocomplete="off" onkeyup="submitUserBtn()">
                 </div>
                 <div class="row-pic">
                     <div class="image-container">
-                        <img id="source_img" src="images/profile.svg" alt="dev-1954">
+                        <img id="source_img" src="{{ Auth()->user()->profile_photo_path != null ? Auth()->user()->profile_photo_path : 'images/profile.svg' }}" alt="dev-1954">
                     </div>
                     <label for="input_image">Choose picture</label>
-                    <input type="file" id="input_image" accept="image/*" onchange="previewFile();submitUserBtn()" hidden>
+                    <input type="file" id="input_image" accept="image/*" onchange="previewFile(); submitUserBtn()" hidden>
                     <input name="image" type="text" id="resultImage"  hidden>
                 </div>
             </div>
@@ -131,7 +131,7 @@
     }
 
     function previewFile() {
-        console.log(1);
+        document.getElementById("resultImage").required = true;
         var preview = document.getElementById('source_img');
 
         preview.style.opacity = 1;
@@ -140,7 +140,9 @@
 
         reader.addEventListener("load", function () {
             preview.src = reader.result;
-            myFunction();
+
+            setTimeout(myFunction(), 2000);
+
         }, false);
 
         if (file) {
@@ -150,7 +152,7 @@
 
     function myFunction(){
         var source_img = document.getElementById("source_img");
-        var quality =  60,
+        var quality =  50,
         output_format = 'jpg';
         document.getElementById("resultImage").value = jic.compress(source_img,quality,output_format).src;
     };

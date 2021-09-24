@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Auth;
 
 use Exception;
@@ -49,6 +50,13 @@ class SocialController extends Controller
                         'auth_type' => 'google',
                         'password'  => encrypt('admin@123')
                     ]);
+
+                    $profile = new Profile();
+                    $profile->user_id = $createUser->id;
+                    $profile->nickname = $createUser->name;
+                    $profile->save();
+
+
                     Auth::login($createUser);
                 }
                 //if user email does exist
@@ -113,6 +121,12 @@ class SocialController extends Controller
                         'auth_type' => 'github',
                         'password'  => encrypt('gitpwd059')
                     ]);
+
+                    $profile = new Profile();
+                    $profile->user_id = $gitUser->id;
+                    $profile->nickname = $gitUser->name;
+                    $profile->save();
+
                     Auth::login($gitUser);
                 }
                 //if user email does exist
@@ -173,7 +187,9 @@ class SocialController extends Controller
                     'role_id' => $role_id,
                     'password' => encrypt('admin12345')
                 ]);
-
+                $profile = Profile::create([
+                    'nickname' => $user->name,
+                ]);
                 Auth::login($user);
 
                 return redirect('/');
@@ -215,6 +231,9 @@ class SocialController extends Controller
                         'facebook_id'=> $user->id,
                         'auth_type'=> 'facebook',
                         'password' => encrypt('gitpwd059')
+                    ]);
+                    $profile = Profile::create([
+                        'nickname' => $gitUser->name,
                     ]);
                     Auth::login($gitUser);
                 }
@@ -273,6 +292,9 @@ class SocialController extends Controller
                         'twitter_id'=> $user->id,
                         'auth_type'=> 'twitter',
                         'password' => encrypt('gitpwd059')
+                    ]);
+                    $profile = Profile::create([
+                        'nickname' => $gitUser->name,
                     ]);
                     Auth::login($gitUser);
                 }

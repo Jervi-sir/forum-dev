@@ -94,7 +94,7 @@
         reader.addEventListener("load", function () {
             preview.src = reader.result;
             preview2.src = reader.result;
-            myFunction();
+            setTimeout(myFunction(), 1000);
         }, false);
 
         if (file) {
