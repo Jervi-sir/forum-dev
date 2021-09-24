@@ -51,6 +51,15 @@ Route::get('/article/{slug}', [ArticleController::class, 'show'])->name('article
 Route::get('/mine', [ArticleController::class, 'mine'])->name('article.mine');
 Route::get('/profile', [UserController::class, 'index'])->name('profile.view');
 
+Route::get('/profile-edit', [UserController::class, 'profile'])->name('profile.edit');
+Route::post('/profile-edit', [UserController::class, 'profileUpdate'])->name('profile.update');
+Route::get('/customization', [UserController::class, 'customization'])->name('customization.edit');
+Route::post('/customization', [UserController::class, 'customizationUpdate'])->name('customization.update');
+Route::get('/account', [UserController::class, 'account'])->name('account.edit');
+Route::post('/account', [UserController::class, 'accountUpdate'])->name('account.update');
+
+
+
 
 
 /*

@@ -46,14 +46,23 @@ main .profile .top .details .edit-profile button {
     padding: 0.5rem 1rem;
     border: none;
     background: #171C29;
+}
+
+main .profile .top .details .edit-profile button a{
+    color: #FFC700;
     border-radius: 4px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
     font-size: var(--size-regular);
-    color: #FFC700;
+    text-decoration: none;
 }
 
+main .profile .top .details .edit-profile button:hover {
+    cursor: pointer;
+    background: #07080e;
+    transition: 0.5s;
+}
 
 main .profile .top .username {
     font-family: Poppins;

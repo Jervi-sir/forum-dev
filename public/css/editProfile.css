@@ -1,0 +1,170 @@
+main {
+    width: var(--site-width);
+    padding: var(--layout-padding);
+    margin: auto;
+    display: grid;
+    grid-gap: var(--layout-gap);
+    grid-template-columns: 300px 1fr;
+}
+
+/*------ side menu ------*/
+main .side-menu {
+    max-height: 200px;
+    background: #252A3F;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+main .side-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main .side-menu ul li {
+    padding: 10px;
+}
+main .side-menu ul li a {
+    text-decoration: none;
+    padding-left: 2rem;
+    color: white;
+}
+
+main .side-menu ul li.active {
+    background: #464D67;
+}
+
+main .side-menu ul li.active a {
+    color: #FFC700;
+}
+
+/*----- tabs global ----*/
+.tab h4 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: 0.2em;
+
+    color: #FFFFFF;
+}
+
+.tab .row {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.tab .row label {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 0.3rem;
+    color: #FFFFFF;
+}
+
+.tab .row input {
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: none;
+    padding: 1rem;
+    color: white;
+}
+.tab .row input:focus {
+    outline: none;
+    border: 1px solid #FFC700;
+    transition: 0.5s;
+}
+
+main .tab .container{
+    background: #252A3F;
+    padding: 1rem 3rem;
+}
+
+form {
+    margin-bottom: 3rem;
+}
+
+form .submit {
+    background: #252A3F;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+}
+
+form .submit button {
+    width: 100%;
+    padding: 0.7rem;
+    background: #171C29;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #FFC700;
+    border: none;
+}
+
+form .submit button:hover {
+    cursor: pointer;
+}
+
+form textarea {
+    resize: vertical;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    color: white;
+    font-size: 15px;
+}
+
+form textarea:focus {
+    outline: none;
+    border: 1px solid #FFC700;
+    transition: 0.5s;
+}
+
+/*--------others ----------------*/
+.tab .row span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+.row-pic {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.row-pic .image-container img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.row-pic img {
+    width: 50px;
+}
+
+.row-pic label {
+    background: #171C29;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    color: #FFC700;
+}
+.row-pic label:hover {
+    cursor: pointer;
+}
+
+

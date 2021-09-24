@@ -22,7 +22,7 @@
             </div>
             <div class="details">
                 <div class="edit-profile">
-                    <button>Edit Profile</button>
+                    <button><a href="{{ route('profile.edit') }}">Edit Profile</a></button>
                 </div>
                 <div class="username">
                     {{ $user->name }}
