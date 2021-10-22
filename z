@@ -1,0 +1,83 @@
+[33mcommit 0eaf929bb02caa454ff8fa8d6a3e7fc004a40c4d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Jervi <jervi-sir>
+Date:   Fri Sep 24 18:20:57 2021 +0000
+
+    details in profile added c45ontroller
+
+[33mcommit 8f5c5620617042ac3655771dc3ce0ae65a3ac93c[m
+Author: Jervi <jervi-sir>
+Date:   Fri Sep 24 18:01:38 2021 +0000
+
+    profile edit controller done
+
+[33mcommit e7cfc38769cc5b766a01ad5b6afb7cb9bd190a14[m
+Author: Jervi <jervi-sir>
+Date:   Fri Sep 24 16:54:41 2021 +0000
+
+    menu dropdown, profile edit page
+
+[33mcommit 671032d8482c05e9b01aa1f4ce9f5c270684dd6e[m
+Author: Jervi <jervi-sir>
+Date:   Thu Sep 23 21:52:39 2021 +0000
+
+    preview done
+
+[33mcommit c19ee4507041336e8fc25b23b596b975c42b3cc5[m
+Author: Jervi <jervi-sir>
+Date:   Thu Sep 23 21:29:09 2021 +0000
+
+    create post half done
+
+[33mcommit c6251bbc50b7f9f799e3084f42692e5c43140b97[m
+Author: Jervi <jervi-sir>
+Date:   Thu Sep 23 18:30:28 2021 +0000
+
+    added some views, routes, controllers
+
+[33mcommit 4f88094cece9895ee5876e91eddfb71408029de5[m
+Author: Jervi <jervi-sir>
+Date:   Thu Sep 23 18:21:57 2021 +0000
+
+    set up toastr
+
+[33mcommit 1a58f2aec1a06c1dc794628340bcbc53f8c1d9e4[m
+Author: Jervi <jervi-sir>
+Date:   Thu Sep 23 18:20:26 2021 +0000
+
+    db, rls, seed, setup views and css
+
+[33mcommit 14e29e82fd7cf46152d83a76ec05ad6cde26ca19[m
+Author: unknown <jervi>
+Date:   Thu Sep 23 16:53:20 2021 +0000
+
+    pre setup for image client side compressor:
+
+[33mcommit bf3a5f20a28478e639829ce675a49f19aedae6e5[m
+Author: unknown <jervi>
+Date:   Thu Sep 23 13:16:29 2021 +0000
+
+    cloudinary setted up
+
+[33mcommit 54974af7787cf47a0ca77ffbf0bbe88dfb11c836[m
+Author: unknown <jervi>
+Date:   Thu Sep 23 10:48:04 2021 +0000
+
+    continue with github, google(done),, facebook, twitter, linkedin(just a setup)
+
+[33mcommit 247fd7c01ebf949b5b8e82ce0f5711c61567c613[m
+Author: unknown <jervi>
+Date:   Thu Sep 23 00:55:03 2021 +0000
+
+    added linkedin but failure
+
+[33mcommit 52a111a188f50d27fb7f12a046e14cfbd073d581[m
+Author: unknown <jervi>
+Date:   Thu Sep 23 00:19:23 2021 +0000
+
+    Jetstream, reset psswrd mailtrap
+
+[33mcommit a5d73946862d43c0577ea67ff092a833ed1ed8d9[m
+Author: unknown <jervi>
+Date:   Wed Sep 22 23:03:23 2021 +0000
+
+    fresh

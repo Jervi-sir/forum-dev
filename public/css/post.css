@@ -1,6 +1,6 @@
 main {
     width: 800px;
-    margin: 2rem auto;
+    margin: var(--layout-gap) auto;
 }
 
 main .container {
@@ -82,6 +82,7 @@ main .edit-container .image label {
     position: absolute;
     right: 1rem;
     bottom: 1rem;
+    font-size: var(--size-regular);
 }
 
 main .edit-container .image label:hover {
@@ -118,6 +119,7 @@ main .edit-container .title-tags .title::placeholder {
     letter-spacing: 0.265em;
     color: #B8B8B8;
     outline-style: none;
+    border: none;
 }
 
 main .edit-container .title-tags .tags,
@@ -128,6 +130,7 @@ main .edit-container .title-tags .tags::placeholder {
     font-size: var(--size-medium);
     color: #8B858E;
     outline-style: none;
+    border: none;
 }
 
 /*--- post ---*/
@@ -161,7 +164,7 @@ main .actions {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    margin-top: 1rem;
+    margin-top: var(--layout-gap);
 
 }
 

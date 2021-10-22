@@ -41,6 +41,8 @@ footer {
 footer p {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: var(--size-regular);
+    font-weight: 100;
 }
 footer ul {
     display: flex;
