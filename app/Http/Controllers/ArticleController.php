@@ -43,6 +43,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        $tagsFound = [];
+        //count(json_decode($request->tags))
+        foreach (json_decode($request->tags) as $key) {
+            array_push($tagsFound, $key->value);
+        }
+
+        dd($tagsFound);
         $slug = Str::slug($request->input('title'), "-");
         $response = cloudinary()->upload($request->input('image'))->getSecurePath();
 
